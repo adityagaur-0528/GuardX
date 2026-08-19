@@ -2,56 +2,94 @@
 
 ## 1. Research Objective
 
-GuardX aims to investigate how ordinary images can unintentionally expose
-personal or privacy-sensitive information before being shared online.
+GuardX wants to study how everyday pictures can inadvertently reveal personal or private information before they are shared online.
 
-The project focuses on both visible information and hidden information
-embedded within image files.
+The research focuses on information that can be directly seen in an image, as well as information that is embedded in the image file.
 
 ---
 
-## 2. What Can an Image Reveal?
+## 2. Privacy-Sensitive Information
 
-An ordinary image can contain potentially sensitive information such as:
+GuardX will investigate the detection of:
 
-- Faces and personal details
-- Phone numbers, emails and addresses
+- Faces
+- Phone numbers
+- Email addresses
+- Addresses
 - Vehicle registration numbers
-- Documents, tickets and boarding passes
+- Identity documents
+- Tickets and boarding passes
+- Receipts
 - QR codes and barcodes
-- Location clues such as signs, house numbers and landmarks
-- Hidden metadata such as GPS coordinates, timestamps and camera information
+- Computer and mobile screens
+- Street signs and house numbers
+- Location-related visual clues
+- EXIF metadata such as GPS, date/time, camera information and software details
 
 ---
 
-## 3. GuardX Approach
+## 3. Analysis Approach
 
-GuardX will not automatically label an image as "High Risk" simply because
-a particular piece of information is detected.
+GuardX will use multiple analysis layers rather than depending on a single detection technique.
 
-Instead, it will identify the exposed information, explain its potential
-privacy implication and provide the user with appropriate protection options.
+### File-Level Analysis
+Examine image metadata such as EXIF information.
 
----
+### Visual Analysis
+Identify objects, faces, screens, documents and other potentially sensitive regions.
 
-## 4. Proposed Analysis
+### Text Analysis
+Use OCR to identify visible text such as phone numbers, emails, addresses and identifiers.
 
-GuardX will investigate four major areas:
-
-1. Hidden metadata analysis
-2. Visual content analysis
-3. Text and document analysis
-4. Contextual privacy analysis
+### Contextual Analysis
+Consider combinations of detected information that may increase privacy exposure.
 
 ---
 
-## 5. Proposed Protection
+## 4. Protection Approach
 
-GuardX will explore methods to protect detected information, including:
+When sensitive information is detected, GuardX will investigate privacy-preserving actions such as:
 
-- Removing image metadata
-- Blurring faces and vehicle plates
-- Redacting sensitive text
-- Protecting QR/barcode information
-- Generating a sanitized copy of the image
-- Re-analyzing the sanitized image to verify the protection
+- Metadata removal
+- Face blurring
+- Number-plate blurring
+- Sensitive-text redaction
+- QR/barcode redaction
+- Sanitized image generation
+
+---
+
+## 5. Verification
+
+After protection, the sanitized image should be analyzed again.
+
+GuardX will compare:
+
+BEFORE → Detected privacy-sensitive information
+
+PROTECTION → Applied privacy-preserving actions
+
+AFTER → Remaining detectable information
+
+The goal is to verify the effectiveness of the protection instead of assuming that the image is automatically safe.
+
+---
+
+## 6. Research Questions
+
+- What privacy-sensitive information can be extracted from ordinary images?
+- Which information can be detected using computer vision?
+- Which information requires OCR or document analysis?
+- What hidden information can be obtained from image metadata?
+- How can contextual clues contribute to privacy exposure?
+- Which modern AI/computer-vision approaches are suitable?
+- How can detected information be protected?
+- How can sanitization effectiveness be verified?
+
+---
+
+## 7. Current Status
+
+Research and technology selection are currently in progress.
+
+Implementation will begin after the major detection and protection components have been evaluated.
